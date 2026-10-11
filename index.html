@@ -3,189 +3,169 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Fashion World India – discover fashion, gadgets, home essentials and everyday deals.">
-  <title>Fashion World India | Smart Finds. Great Style</title>
+  <title>Fashion World India | Premium Deals & Fashion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{--ink:#171717;--muted:#686868;--gold:#fc893c;--cream:#faf8f3;--line:#e9e5dc;--white:#fff}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
-    .topbar{background:#171717;color:#fff;text-align:center;padding:9px 12px;font-size:12px;letter-spacing:.5px}
-    header{padding:20px 5%;display:flex;align-items:center;justify-content:space-between;gap:18px;border-bottom:1px solid var(--line);flex-wrap:wrap}
-    .brand{font-size:22px;font-weight:900;letter-spacing:1px}.brand span{color:var(--gold)}.tag{font-size:11px;color:var(--muted);margin-top:4px;letter-spacing:1.5px}
-    nav{display:flex;gap:18px;flex-wrap:wrap}nav a{font-size:13px;color:var(--ink);text-decoration:none;font-weight:700}
-    .search{display:flex;gap:8px}input[id="search"]{padding:11px 12px;border:1px solid var(--line);border-radius:5px;min-width:180px;max-width:100%}
-    .hero{margin:24px 5%;background:linear-gradient(110deg,#1b1b1b 0%,#383126 62%,#8d6c36 100%);color:white;border-radius:12px;padding:48px 7%;min-height:220px;display:flex;flex-direction:column;justify-content:center}
-    .hero h1{font-size:clamp(30px,5vw,54px);line-height:1.05;margin:0 0 14px;max-width:560px}.hero p{color:#eee;line-height:1.45;margin:0 0 20px;max-width:520px}
-    .hero a.btn{display:inline-block;padding:12px 24px;background:var(--gold);color:#111;font-weight:bold;text-decoration:none;border-radius:6px;width:fit-content}
-    section{padding:18px 5%}.section-head{display:flex;justify-content:space-between;align-items:end;gap:10px;flex-wrap:wrap;margin-bottom:16px}
-    .categories{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.cat{background:var(--cream);border:1px solid var(--line);padding:14px;border-radius:8px;text-align:center;text-decoration:none;color:var(--ink);font-weight:bold;font-size:13px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
-    .card img{width:100%;height:220px;object-fit:cover;background:#f5f5f5}
-    .card-body{padding:16px;display:flex;flex-direction:column;flex-grow:1}
-    .card-cat{font-size:11px;font-weight:bold;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
-    .card-title{font-size:16px;font-weight:bold;margin:0 0 8px;line-height:1.3}
-    .card-desc{font-size:13px;color:var(--muted);margin:0 0 16px;line-height:1.4;flex-grow:1}
-    .card-btn{display:block;text-align:center;padding:12px;background:#171717;color:#fff;text-decoration:none;font-weight:bold;border-radius:6px;font-size:13px;letter-spacing:.5px}
-    .card-btn:hover{background:var(--gold);color:#111}
-    footer{background:#171717;color:#fff;padding:28px 5%;font-size:12px;line-height:1.7;margin-top:40px}footer a{color:#e5c67c}
-    .note{background:var(--cream);border:1px solid var(--line);padding:14px 18px;border-radius:8px;margin:20px 5%;font-size:12px;color:#555}
-    @media(max-width:850px){.categories{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:480px){header{padding:16px 4%}.grid{grid-template-columns:1fr}.categories{grid-template-columns:repeat(2,1fr)}.search input{width:100%}}
+    :root {
+      --primary: #ff9900;
+      --dark: #0f1111;
+      --light-bg: #f7f8f9;
+      --card-bg: #ffffff;
+      --text-main: #0f1111;
+      --text-muted: #565959;
+      --badge-red: #cc0c39;
+      --border: #e7e7e7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--light-bg); color: var(--text-main); }
+    
+    .top-banner { background: var(--dark); color: #fff; text-align: center; padding: 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.5px; }
+    .top-banner span { color: var(--primary); }
+
+    header { background: #fff; padding: 16px 5%; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 15px; flex-wrap: wrap; sticky: top; }
+    .logo { font-size: 22px; font-weight: 800; color: var(--dark); text-decoration: none; }
+    .logo span { color: var(--primary); }
+    
+    .search-box { flex-grow: 1; max-width: 400px; position: relative; }
+    .search-box input { width: 100%; padding: 11px 16px; border: 2px solid var(--border); border-radius: 25px; outline: none; font-size: 14px; transition: 0.3s; }
+    .search-box input:focus { border-color: var(--primary); }
+
+    .hero-section { margin: 20px 5%; background: linear-gradient(135deg, #131921 0%, #232f3e 100%); color: white; border-radius: 16px; padding: 40px 6%; text-align: left; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    .hero-section h1 { font-size: clamp(24px, 4vw, 42px); font-weight: 800; margin-bottom: 10px; line-height: 1.2; }
+    .hero-section p { font-size: 14px; color: #ccc; margin-bottom: 20px; }
+    .hero-btn { display: inline-block; padding: 12px 28px; background: var(--primary); color: #000; font-weight: 700; border-radius: 25px; text-decoration: none; font-size: 14px; }
+
+    .container { padding: 10px 5% 40px; }
+    .section-title { font-size: 20px; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; }
+    
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+    .product-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; position: relative; }
+    .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.08); }
+    
+    .badge { position: absolute; top: 12px; left: 12px; background: var(--badge-red); color: white; padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 700; z-index: 1; }
+    
+    .img-box { width: 100%; height: 230px; background: #fff; display: flex; align-items: center; justify-content: center; padding: 10px; overflow: hidden; }
+    .img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+    .details { padding: 16px; display: flex; flex-direction: column; flex-grow: 1; }
+    .category-name { font-size: 11px; font-weight: 700; color: var(--primary); text-transform: uppercase; margin-bottom: 6px; }
+    .title { font-size: 15px; font-weight: 700; color: var(--text-main); line-height: 1.3; margin-bottom: 8px; }
+    .desc { font-size: 13px; color: var(--text-muted); line-height: 1.4; margin-bottom: 16px; flex-grow: 1; }
+    
+    .buy-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 12px; background: var(--primary); color: #0f1111; font-weight: 700; font-size: 13px; text-decoration: none; border-radius: 8px; transition: 0.2s; text-align: center; }
+    .buy-btn:hover { background: #e68a00; }
+
+    footer { background: var(--dark); color: #888; text-align: center; padding: 30px 5%; font-size: 13px; margin-top: 40px; border-top: 1px solid #222; }
+    footer strong { color: #fff; }
   </style>
 </head>
 <body>
-  <div class="topbar">FASHION • GADGETS • HOME ESSENTIALS — DISCOVER YOUR NEXT FAVOURITE</div>
+
+  <div class="top-banner">
+    🔥 TOP DEALS & DISCOUNTS — UP TO <span>60% OFF</span> ON AMAZON
+  </div>
+
   <header>
-    <div>
-      <div class="brand">FASHION WORLD <span>INDIA</span></div>
-      <div class="tag">SMART FINDS. EVERYDAY STYLE.</div>
-    </div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#categories">Categories</a>
-      <a href="#products">Products</a>
-      <a href="#about">About</a>
-    </nav>
-    <div class="search">
-      <input id="search" type="search" placeholder="Search products..." aria-label="Search products">
+    <a href="#" class="logo">FASHION WORLD <span>INDIA</span></a>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search products...">
     </div>
   </header>
 
-  <main id="home">
-    <section class="hero">
-      <h1>Find your style.<br>Love your finds.</h1>
-      <p>Explore hand-picked fashion, accessories, gadgets and useful everyday products — all in one place.</p>
-      <a href="#products" class="btn">EXPLORE PRODUCTS →</a>
-    </section>
+  <div class="hero-section">
+    <h1>Handpicked Trends & Smart Deals</h1>
+    <p>Discover the best fashion, gadgets & everyday essentials directly from top stores.</p>
+    <a href="#shop" class="hero-btn">SHOP NOW ↓</a>
+  </div>
 
-    <section id="categories">
-      <div class="section-head">
-        <h2>Shop by Category</h2>
-        <p style="color:var(--muted);margin:0;">Browse the things you need.</p>
-      </div>
-      <div class="categories">
-        <a class="cat" href="#products" data-cat="Fashion">👕 Fashion</a>
-        <a class="cat" href="#products" data-cat="Footwear">👟 Footwear</a>
-        <a class="cat" href="#products" data-cat="Accessories">🕶️ Accessories</a>
-        <a class="cat" href="#products" data-cat="Electronics">🎧 Electronics</a>
-        <a class="cat" href="#products" data-cat="Home & Kitchen">🏡 Home & Kitchen</a>
-        <a class="cat" href="#products" data-cat="Lifestyle">🎒 Lifestyle</a>
-      </div>
-    </section>
-
-    <section id="products">
-      <div class="section-head">
-        <h2>Featured Deals & Trending Items</h2>
-        <p style="color:var(--muted);margin:0;">Handpicked products with best offers</p>
-      </div>
-      <div class="grid" id="grid">
-        
-        <!-- Product 1 -->
-        <article class="card" data-category="Fashion">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500&auto=format&fit=crop" alt="Stylish Fashion Collection">
-          <div class="card-body">
-            <div class="card-cat">Fashion</div>
-            <div class="card-title">Trending Men's Fashion & Wear</div>
-            <div class="card-desc">Upgrade your daily look with comfortable and high-quality outfit choices.</div>
-            <a href="https://amzn.in/d/0dBTD7Wi" target="_blank" rel="noopener noreferrer" class="card-btn">CHECK LATEST PRICE ↗</a>
-          </div>
-        </article>
-
-        <!-- Product 2 -->
-        <article class="card" data-category="Footwear">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop" alt="Footwear & Sneakers">
-          <div class="card-body">
-            <div class="card-cat">Footwear</div>
-            <div class="card-title">Stylish Footwear & Sneakers</div>
-            <div class="card-desc">Comfortable and durable shoes designed for active everyday lifestyle.</div>
-            <a href="https://amzn.in/d/0iwRbU7h" target="_blank" rel="noopener noreferrer" class="card-btn">CHECK LATEST PRICE ↗</a>
-          </div>
-        </article>
-
-        <!-- Product 3 -->
-        <article class="card" data-category="Accessories">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&auto=format&fit=crop" alt="Smartwatch & Accessories">
-          <div class="card-body">
-            <div class="card-cat">Accessories</div>
-            <div class="card-title">Smart Gadgets & Watch Accessories</div>
-            <div class="card-desc">Stay updated with modern wearable technology and trendy accessories.</div>
-            <a href="https://amzn.in/d/0djhSyL9" target="_blank" rel="noopener noreferrer" class="card-btn">CHECK LATEST PRICE ↗</a>
-          </div>
-        </article>
-
-        <!-- Product 4 -->
-        <article class="card" data-category="Electronics">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop" alt="Audio & Headphones">
-          <div class="card-body">
-            <div class="card-cat">Electronics</div>
-            <div class="card-title">Premium Wireless Audio</div>
-            <div class="card-desc">Crystal clear sound quality and long battery life for immersive listening.</div>
-            <a href="https://amzn.in/d/0dBTD7Wi" target="_blank" rel="noopener noreferrer" class="card-btn">CHECK LATEST PRICE ↗</a>
-          </div>
-        </article>
-
-        <!-- Product 5 -->
-        <article class="card" data-category="Home & Kitchen">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=500&auto=format&fit=crop" alt="Home Decor">
-          <div class="card-body">
-            <div class="card-cat">Home & Kitchen</div>
-            <div class="card-title">Modern Home & Utility Finds</div>
-            <div class="card-desc">Small smart additions to make your home convenient and stylish.</div>
-            <a href="https://amzn.in/d/0iwRbU7h" target="_blank" rel="noopener noreferrer" class="card-btn">CHECK LATEST PRICE ↗</a>
-          </div>
-        </article>
-
-        <!-- Product 6 -->
-        <article class="card" data-category="Lifestyle">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&auto=format&fit=crop" alt="Backpack & Travel">
-          <div class="card-body">
-            <div class="card-cat">Lifestyle</div>
-            <div class="card-title">Everyday Backpack & Essentials</div>
-            <div class="card-desc">Durable and practical companions for travel, office, or daily outings.</div>
-            <a href="https://amzn.in/d/0djhSyL9" target="_blank" rel="noopener noreferrer" class="card-btn">CHECK LATEST PRICE ↗</a>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <div class="note">
-      <strong>Affiliate notice:</strong> Some links on this website are affiliate links. If you buy through an approved link, the website owner may earn a small commission at no extra cost to you.
+  <div class="container" id="shop">
+    <div class="section-title">
+      <span>Featured Products</span>
     </div>
 
-    <section id="about">
-      <div class="section-head">
-        <h2>About Fashion World India</h2>
+    <div class="product-grid" id="productGrid">
+
+      <!-- Product 1 -->
+      <div class="product-card">
+        <div class="badge">LIMITED DEAL</div>
+        <div class="img-box">
+          <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500&auto=format&fit=crop" alt="Fashion">
+        </div>
+        <div class="details">
+          <div class="category-name">Fashion</div>
+          <div class="title">Trending Men's Fashion & Apparel</div>
+          <div class="desc">Upgrade your closet with top quality, stylish & comfortable outfits.</div>
+          <a href="https://amzn.in/d/0dBTD7Wi" target="_blank" class="buy-btn">
+            BUY ON AMAZON ↗
+          </a>
+        </div>
       </div>
-      <p style="color:var(--muted);line-height:1.6;">A curated discovery page for fashion, gadgets, accessories and everyday essentials. We help shoppers discover quality products across useful categories.</p>
-    </section>
-  </main>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <div class="badge">BEST SELLER</div>
+        <div class="img-box">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop" alt="Footwear">
+        </div>
+        <div class="details">
+          <div class="category-name">Footwear</div>
+          <div class="title">Stylish Running Shoes & Sneakers</div>
+          <div class="desc">Lightweight, durable & modern shoes designed for everyday comfort.</div>
+          <a href="https://amzn.in/d/0iwRbU7h" target="_blank" class="buy-btn">
+            BUY ON AMAZON ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <div class="badge">HOT DEAL</div>
+        <div class="img-box">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&auto=format&fit=crop" alt="Accessories">
+        </div>
+        <div class="details">
+          <div class="category-name">Accessories</div>
+          <div class="title">Smart Watch & Modern Wearables</div>
+          <div class="desc">Track fitness, get notifications & stay smart with modern gadgets.</div>
+          <a href="https://amzn.in/d/0djhSyL9" target="_blank" class="buy-btn">
+            BUY ON AMAZON ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card">
+        <div class="badge">POPULAR</div>
+        <div class="img-box">
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop" alt="Electronics">
+        </div>
+        <div class="details">
+          <div class="category-name">Electronics</div>
+          <div class="title">Wireless Bluetooth Headphones</div>
+          <div class="desc">Immersive sound quality with deep bass and ultra-long battery life.</div>
+          <a href="https://amzn.in/d/0dBTD7Wi" target="_blank" class="buy-btn">
+            BUY ON AMAZON ↗
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
   <footer>
-    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-      <div><strong>FASHION WORLD INDIA</strong> — Smart finds. Everyday style.</div>
-      <div>&copy; <span id="year"></span> Fashion World India. All rights reserved.</div>
-    </div>
+    <p>© <strong>Fashion World India</strong>. All rights reserved.</p>
+    <p style="margin-top:5px; font-size:11px;">Participant in affiliate marketing programs to earn commissions on qualifying purchases.</p>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const search = document.getElementById('search');
-    const cards = Array.from(document.querySelectorAll('.card'));
-    
-    function filter(cat) {
-      const q = search.value.toLowerCase().trim();
-      cards.forEach(c => {
-        const textOk = !q || c.innerText.toLowerCase().includes(q);
-        const catOk = !cat || c.dataset.category === cat;
-        c.style.display = (textOk && catOk) ? 'flex' : 'none';
-      });
-    }
+    const searchInput = document.getElementById('searchInput');
+    const cards = document.querySelectorAll('.product-card');
 
-    search.addEventListener('input', () => filter());
-
-    document.querySelectorAll('.cat').forEach(a => {
-      a.addEventListener('click', (e) => {
-        filter(a.dataset.cat);
+    searchInput.addEventListener('input', () => {
+      const val = searchInput.value.toLowerCase();
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(val) ? 'flex' : 'none';
       });
     });
   </script>
